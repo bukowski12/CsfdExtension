@@ -1,100 +1,61 @@
 {
-    "ext_name": {
-        "message": "CSFD Search & Extensions",
-        "description": "The name of the extension."
-    },
-    "ext_desc": {
-        "message": "Simple search for CSFD.cz movie database and various extensions to the site.",
-        "description":"The description of the extension."
-    },
-    "button_search": {
-        "message": "Search",
-        "description": "Label for main search button in popup.html."
-    },
-
-    "common_new_version_installed": {
-        "message": "New version successfully installed."
-    },
-
-    "opt_page_name": {
-        "message": "Settings",
-        "description": "Options page name."
-    },
-    "opt_feedback": {
-        "message": "Send feedback",
-        "description": "Send feedback link."
-    },
-    "opt_imdb_rating": {
-        "message": "IMDB rating",
-        "description": "IMDB rating feature name."
-    },
-    "opt_fav_rating": {
-        "message": "Favourite users rating",
-        "description": "Favourite users rating feature name."
-    },
-    "opt_end_year": {
-        "message": "End year of TV show",
-        "description": "End year of TV show feature name."
-    },
-    "opt_orig_lang": {
-        "message": "Original language",
-        "description": "Original language feature name."
-    },
-    "opt_youtube": {
-        "message": "YouTube trailer",
-        "description": "YouTube trailer feature name."
-    },
-    "opt_episodes": {
-        "message": "List of episodes of TV show",
-        "description": "List of episodes of TV show feature name."
-    },
-    "opt_torrents": {
-        "message": "Torrent search",
-        "description": "Torrent search feature name."
-    },
-    "opt_subtitles": {
-        "message": "Subtitle search",
-        "description": "Subtitle seach feature name."
-    },
-    "opt_go_up": {
-        "message": "Go up link",
-        "description": "Go up link feature name."
-    },
-    "opt_csfd_link": {
-        "message": "CSFD link on IMDB site",
-        "description": "CSFD link on IMDB site feature name."
-    },
-    "opt_artist_flyout": {
-        "message": "Artist tooltip",
-        "description": "Artist tooltip feature name."
-    },
-    "opt_movie_flyout": {
-        "message": "Movie tooltip",
-        "description": "Movie tooltip feature name."
-    },
-    "opt_data_export": {
-        "message": "User data export",
-        "description": "User data export feature name."
-    },
-    "opt_search_autocomplete": {
-        "message": "Search autocomplete",
-        "description": "Search autocomplete feature name."
-    },
-    "opt_save": {
-        "message": "Save options",
-        "description": "Save options button name."
-    },
-    "opt_on": {
-        "message": "On",
-        "description": "On."
-    },
-    "opt_off": {
-        "message": "Off",
-        "description": "Off"
-    },
-    "opt_saved": {
-        "message": "Saved",
-        "description": "Message after saving the settings."
-    }
-
+   "button_search": {
+      "description": "Label for main search button in popup.html.",
+      "message": "Search"
+   },
+   "common_new_version_installed": {
+      "message": "New version successfully installed."
+   },
+   "ext_desc": {
+      "description": "The description of the extension.",
+      "message": "Simple search for CSFD.cz movie database and various extensions to the site."
+   },
+   "ext_name": {
+      "description": "The name of the extension.",
+      "message": "CSFD Search & Extensions"
+   },
+   "opt_artist_flyout": {
+      "description": "Artist tooltip feature name.",
+      "message": "Artist tooltip"
+   },
+   "opt_feedback": {
+      "description": "Send feedback link.",
+      "message": "Send feedback"
+   },
+   "opt_go_up": {
+      "description": "Go up link feature name.",
+      "message": "Go up link"
+   },
+   "opt_imdb_rating": {
+      "description": "IMDB rating feature name.",
+      "message": "IMDB rating"
+   },
+   "opt_movie_flyout": {
+      "description": "Movie tooltip feature name.",
+      "message": "Movie tooltip"
+   },
+   "opt_off": {
+      "description": "Off",
+      "message": "Off"
+   },
+   "opt_on": {
+      "description": "On.",
+      "message": "On"
+   },
+   "opt_orig_lang": {
+      "description": "Original language feature name.",
+      "message": "Original language"
+   },
+   "opt_page_name": {
+      "description": "Options page name.",
+      "message": "Settings"
+   },
+   "opt_save": {
+      "description": "Save options button name.",
+      "message": "Save options"
+   },
+   "opt_saved": {
+      "description": "Message after saving the settings.",
+      "message": "Saved"
+   }
 }

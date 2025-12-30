@@ -1,5 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title data-resource="ext_name">CSFD Vyhľadávanie</title>
@@ -7,6 +8,7 @@
     <script src="js/libs/jquery.js" type="text/javascript"></script>
     <script src="js/other/lang.js" type="text/javascript"></script>
 </head>
+
 <body class="options-page">
     <div class="content-left">
         <h1 data-resource="ext_name">CSFD Vyhľadávanie & rozšírenia</h1>
@@ -15,7 +17,8 @@
             © Tomáš Smetanka<br>
             CSFD: <a href="https://www.csfd.cz/uzivatel/243918-tomizzi/" target="_blank">Tomizzi</a><br>
             <a href="http://smetanka.net" target="_blank">smetanka.net</a><br>
-            <a href="https://chrome.google.com/webstore/detail/ookhejngpnlkejplknjeligcfnegimip" target="_blank" data-resource="opt_feedback">Odoslať spätnú väzbu</a>
+            <a href="https://github.com/bukowski12/CsfdExtension" target="_blank" data-resource="opt_feedback">Odoslať
+                spätnú väzbu</a>
         </div>
     </div>
     <div class="content-right">
@@ -24,24 +27,6 @@
                 <td data-resource="opt_imdb_rating">Zobrazovať IMDB hodnotenie</td>
                 <td>
                     <select id="imdbRating">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_fav_rating">Zobrazovať priemerné hodnotenie obľúbených užívateľov</td>
-                <td>
-                    <select id="favUsersRating">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_end_year">Zobrazovať rok ukončenia seriálu</td>
-                <td>
-                    <select id="tvSerieEnding">
                         <option value="1" data-resource="opt_on">Áno</option>
                         <option value="0" data-resource="opt_off">Nie</option>
                     </select>
@@ -57,54 +42,9 @@
                 </td>
             </tr>
             <tr>
-                <td data-resource="opt_youtube">Zobrazovať YouTube HD trailer medzi videami</td>
-                <td>
-                    <select id="youtubeTrailer">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_episodes">Zobrazovať zoznam epizód seriálu</td>
-                <td>
-                    <select id="episodes">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_torrents">Zobrazovať vyhľadávanie torrentov medzi odkazmi</td>
-                <td>
-                    <select id="torrentSearch">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_subtitles">Zobrazovať vyhľadávanie titulkov medzi odkazmi</td>
-                <td>
-                    <select id="subtitleSearch">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
                 <td data-resource="opt_go_up">Zobrazovať odkaz na prechod na vrch stránky</td>
                 <td>
                     <select id="goUp">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_csfd_link">Zobrazovať odkaz na CSFD na stránkach IMDB</td>
-                <td>
-                    <select id="csfdLink">
                         <option value="1" data-resource="opt_on">Áno</option>
                         <option value="0" data-resource="opt_off">Nie</option>
                     </select>
@@ -128,24 +68,7 @@
                     </select>
                 </td>
             </tr>
-            <tr>
-                <td data-resource="opt_data_export">Umožniť stiahnutie užívateľových dát (v profile užívateľa)</td>
-                <td>
-                    <select id="exportUserData">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td data-resource="opt_search_autocomplete">Zobrazovať našeptávač pod vyhľadávaním</td>
-                <td>
-                    <select id="searchAutocomplete">
-                        <option value="1" data-resource="opt_on">Áno</option>
-                        <option value="0" data-resource="opt_off">Nie</option>
-                    </select>
-                </td>
-            </tr>
+
             <tr>
                 <td><span id="status"></span></td>
                 <td><button id="submitButton" data-resource="opt_save">Uložiť</button></td>
@@ -154,4 +77,5 @@
     </div>
     <script type="text/javascript" src="js/options.js"></script>
 </body>
+
 </html>

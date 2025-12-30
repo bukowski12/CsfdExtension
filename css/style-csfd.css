@@ -12,20 +12,21 @@ div#rating {
     padding: 10px 0;
     text-align: center;
     margin-bottom: 10px;
-    font-size: 50px;
+    font-size: 42px;
     box-shadow: inset 0 1px 3px 0 #000;
     text-shadow: 0 1px 3px #000;
     background: #DBA904;
     font-weight: bold;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     color: #fff;
     background: #ffaf4b; /* Old browsers */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #ffaf4b 0%,#ff920a 100%); /* Chrome10+, Safari5.1+ */
+    line-height: 30px;
 }
 
 #imdb_rating:after {
-    font-size: 14px;
+    font-size: 10px;
     line-height: 1em;
     font-weight: bold;
     color: #fff;
@@ -97,8 +98,8 @@ div#rating {
     position: absolute;
     z-index: 90;
     width: 400px;
-    background-color: #DDD;
-    color: #000;
+    background-color: #000;
+    /*color: #000;*/
     padding: 8px;
     font-size: 12px;
     border: 7px solid #B01;
@@ -111,7 +112,13 @@ div#rating {
 
 .artist-tooltip .content {
     position: relative;
-    background-color: #DDD;
+    background-color: #000;
+    padding-bottom: 0;
+}
+
+.artist-tooltip .creator-profile-content {
+    position: relative;
+    background-color: #000;
     padding-bottom: 0;
 }
 
@@ -120,15 +127,25 @@ div#rating {
     text-align: center;
 }
 
-.artist-tooltip .info {
-    _float: left;
-    position: relative;
+.artist-tooltip figure {
+    float: left;
+    text-align: center;
+}
+
+.artist-tooltip {
+    float: left;
+    /*position: relative;*/
     overflow: hidden;
     padding-left: 10px;
 }
 
-.artist-tooltip .info h1 {
+.artist-tooltip  h1 {
     line-height: 1.1em;
+}
+
+.artist-tooltip  h3 {
+    font-size: 10px;
+
 }
 
 .artist-tooltip h1, .movie-tooltip  h1 {
@@ -148,12 +165,16 @@ div#rating {
     line-height: 1.2em;
 }
 
-.artist-tooltip .info table th {
-    width: 30px;
+.artist-tooltip table th {
+   /* width: 30px;*/
 }
 
-.artist-tooltip .info table td {
+.artist-tooltip table td {
+    font-size: 10px;
     padding-right: 5px;
+    line-height: 1.2em;
+    /*padding: 1px;*/
+    border: 0;
 }
 
 .artist-tooltip .info .photo_copyright {
@@ -168,8 +189,8 @@ div#rating {
     position: absolute;
     z-index: 90;
     width: 400px;
-    background-color: #DDD;
-    color: #000;
+    background-color: #000;
+   /* color: #000;*/
     padding: 8px;
     font-size: 12px;
     border: 7px solid #B01;
@@ -180,13 +201,18 @@ div#rating {
     border-radius: 10px;
 }
 
-.movie-tooltip td:last-child {
+.movie-tooltip td {
     vertical-align: top;
     padding: 0 8px;
+    border: 0px;
 }
 
 .movie-tooltip h4 {
     display: inline;
+}
+
+.movie-tooltip .film-posters {
+    position:relative;
 }
 
 .movie-tooltip #rating-good, .movie-tooltip #rating-average, .movie-tooltip #rating-trash {

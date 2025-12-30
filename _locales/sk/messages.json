@@ -1,77 +1,47 @@
 {
-    "ext_name": {
-        "message": "CSFD Vyhľadávanie & Rozšírenia"
-    },
-    "ext_desc": {
-        "message": "Vyhľadávanie v CSFD.cz filmovej databáze a rôzne rozšířenia CSFD stránok."
-    },
-    "button_search": {
-        "message": "Hľadaj"
-    },
-
-    "common_new_version_installed": {
-        "message": "Nová verzia úspešne nainštalovaná."
-    },
-
-    "opt_page_name": {
-        "message": "Nastavenia"
-    },
-    "opt_feedback": {
-        "message": "Odoslať spätnú väzbu"
-    },
-    "opt_imdb_rating": {
-        "message": "IMDB hodnotenie"
-    },
-    "opt_fav_rating": {
-        "message": "Priemerné hodnotenie obľúbených užívteľov"
-    },
-    "opt_end_year": {
-        "message": "Rok ukončenia seriálu"
-    },
-    "opt_orig_lang": {
-        "message": "Originálny jazyk"
-    },
-    "opt_youtube": {
-        "message": "YouTube trailer"
-    },
-    "opt_episodes": {
-        "message": "Zoznam epizód seriálu"
-    },
-    "opt_torrents": {
-        "message": "Vyhľadávanie torrentov"
-    },
-    "opt_subtitles": {
-        "message": "Vyhľadávanie tituliek"
-    },
-    "opt_go_up": {
-        "message": "Odkaz na prechod na vrch stránky"
-    },
-    "opt_csfd_link": {
-        "message": "CSFD odkaz na stránkach IMDB"
-    },
-    "opt_artist_flyout": {
-        "message": "Tooltip po prechode nad odkazom tvorcu"
-    },
-    "opt_movie_flyout": {
-        "message": "Tooltip po prechode nad odkazom filmu"
-    },
-    "opt_data_export": {
-        "message": "Export užívateľských dát"
-    },
-    "opt_search_autocomplete": {
-        "message": "Automatické doplňovanie vyhľadávania"
-    },
-    "opt_save": {
-        "message": "Uložiť"
-    },
-    "opt_on": {
-        "message": "Zapnuté"
-    },
-    "opt_off": {
-        "message": "Vypnuté"
-    },
-    "opt_saved": {
-        "message": "Uložené"
-    }
-
+   "button_search": {
+      "message": "Hľadaj"
+   },
+   "common_new_version_installed": {
+      "message": "Nová verzia úspešne nainštalovaná."
+   },
+   "ext_desc": {
+      "message": "Vyhľadávanie v CSFD.cz filmovej databáze a rôzne rozšířenia CSFD stránok."
+   },
+   "ext_name": {
+      "message": "CSFD Vyhľadávanie & Rozšírenia"
+   },
+   "opt_artist_flyout": {
+      "message": "Tooltip po prechode nad odkazom tvorcu"
+   },
+   "opt_feedback": {
+      "message": "Odoslať spätnú väzbu"
+   },
+   "opt_go_up": {
+      "message": "Odkaz na prechod na vrch stránky"
+   },
+   "opt_imdb_rating": {
+      "message": "IMDB hodnotenie"
+   },
+   "opt_movie_flyout": {
+      "message": "Tooltip po prechode nad odkazom filmu"
+   },
+   "opt_off": {
+      "message": "Vypnuté"
+   },
+   "opt_on": {
+      "message": "Zapnuté"
+   },
+   "opt_orig_lang": {
+      "message": "Originálny jazyk"
+   },
+   "opt_page_name": {
+      "message": "Nastavenia"
+   },
+   "opt_save": {
+      "message": "Uložiť"
+   },
+   "opt_saved": {
+      "message": "Uložené"
+   }
 }

@@ -1,23 +1,3 @@
-chrome.runtime.onMessage.addListener(
-
-    function (request, _sender, sendResponse) {
-        fetch(request.input, request.init).then(function (response) {
-            return response.text().then(function (response) {
-                sendResponse([{
-                    body: response,
-                    status: response.status,
-                    statusText: response.statusText,
-                }, null]);
-            });
-        }, function (error) {
-            sendResponse([null, error]);
-        });
-
-        return true;
-    }
-);
-
-
 // check whether new version is installed
 chrome.runtime.onInstalled.addListener(function (details) {
     if (details.reason == "install") {
@@ -25,10 +5,11 @@ chrome.runtime.onInstalled.addListener(function (details) {
     } else if (details.reason == "update") {
         logOnInstalledMessage(details, true);
         removeCache();
-        popNotification(chrome.i18n.getMessage("common_new_version_installed"));
+        var thisVersion = chrome.runtime.getManifest().version;
+        var message = chrome.i18n.getMessage("common_new_version_installed") + " " + thisVersion;
+        popNotification(message);
     }
 });
-
 
 function logOnInstalledMessage(details, updated = false) {
 
@@ -39,7 +20,6 @@ function logOnInstalledMessage(details, updated = false) {
         console.log("[CSFD Search & Extensions] First installation.");
     }
 }
-
 
 function removeCache() {
 
@@ -53,13 +33,12 @@ function removeCache() {
     });
 }
 
-
 function popNotification(message) {
 
     chrome.notifications.create(
         'CSFD_Extensions_Updated', {
         type: 'basic',
-        iconUrl: './img/icon_128.png',
+        iconUrl: chrome.runtime.getURL("img/icon_128.png"),
         title: chrome.i18n.getMessage("ext_name"),
         message: message
     },

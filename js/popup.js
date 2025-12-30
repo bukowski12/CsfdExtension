@@ -2,16 +2,16 @@
 var extensionVersion = chrome.app.getDetails().version;
 
 // Google Analytics
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-18127823-1']);
-_gaq.push(['_trackPageview']);
-(function() {
-    var ga = document.createElement('script');
-    ga.type = 'text/javascript';
-    ga.async = true;
-    ga.src = 'https://ssl.google-analytics.com/ga.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
-})();
+//var _gaq = _gaq || [];
+//_gaq.push(['_setAccount', 'UA-18127823-1']);
+//_gaq.push(['_trackPageview']);
+//(function() {
+//    var ga = document.createElement('script');
+//    ga.type = 'text/javascript';
+//    ga.async = true;
+//    ga.src = 'https://ssl.google-analytics.com/ga.js';
+//    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+//})();
 
 // Search
 window.onload = function() {
@@ -27,7 +27,7 @@ window.onload = function() {
             chrome.tabs.sendMessage(tab[0].id, { method: "getSelection" },
                 function(response) {
                     if (typeof response !== 'undefined' && response.data != "") {
-                        chrome.tabs.create({ url: 'https://chrome.tomizzi.com/search.php?ext=csfd&browser=c&ver=' + extensionVersion + '&q=' + response.data });
+                        chrome.tabs.create({ url: 'https://csfd.cz/hledat/?q=' + response.data });
                     }
                 });
         });
