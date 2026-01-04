@@ -71,7 +71,7 @@
       "http://*/*",
       "https://*/*"
    ],
-   "version": "8.1",
+   "version": "8.1.2",
    "web_accessible_resources": [
       {
          "resources": [

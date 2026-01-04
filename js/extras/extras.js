@@ -57,9 +57,15 @@
                         'url': apiUrl,
                         'dataType': "json",
                         'success': function (data) {
-                            console.log(data.Ratings, data.Ratings[0]);
+                            console.log(data.Ratings, data.Ratings && data.Ratings[0]);
                             title = data.Title;
-                            data.Ratings[0].Value ? imdbRating = data.Ratings[0].Value : imdbRating = "N/A";
+                            if (data.Ratings && data.Ratings.length > 0 && data.Ratings[0].Value) {
+                                imdbRating = data.Ratings[0].Value;
+                            } else if (data.imdbRating) {
+                                imdbRating = data.imdbRating;
+                            } else {
+                                imdbRating = "N/A";
+                            }
                             language = data.Language;
                             // display features
                             addFeatures();
