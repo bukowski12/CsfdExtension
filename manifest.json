@@ -62,7 +62,6 @@
    "name": "CSFD Extensions",
    "options_page": "options.html",
    "permissions": [
-      "tabs",
       "storage",
       "unlimitedStorage",
       "notifications"
@@ -71,7 +70,7 @@
       "http://*/*",
       "https://*/*"
    ],
-   "version": "8.1.2",
+   "version": "8.1.3",
    "web_accessible_resources": [
       {
          "resources": [
