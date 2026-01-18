@@ -45,7 +45,7 @@
                         for (var i = 1; i < 4; i++) {
                             filmography += $(data).find('.creator-filmography .box-content tr').get(i).outerHTML;
                         }
-                        content = content.html();
+                        content = content.prop('outerHTML')
                         content = content.replace(/<\/p>.+<\/div>/gs, '</p></div><br><table>' + filmography + '</table>');
 
 

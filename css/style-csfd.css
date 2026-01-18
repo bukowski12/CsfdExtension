@@ -19,9 +19,12 @@ div#rating {
     font-weight: bold;
     /*border-radius: 10px;*/
     color: #fff;
-    background: #ffaf4b; /* Old browsers */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffaf4b), color-stop(100%,#ff920a)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top, #ffaf4b 0%,#ff920a 100%); /* Chrome10+, Safari5.1+ */
+    background: #ffaf4b;
+    /* Old browsers */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffaf4b), color-stop(100%, #ff920a));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #ffaf4b 0%, #ff920a 100%);
+    /* Chrome10+, Safari5.1+ */
     line-height: 30px;
 }
 
@@ -93,13 +96,11 @@ div#rating {
     border-left: 1px dashed #B7B7B7;
 }
 
-/* artist tooltip */
 .artist-tooltip {
     position: absolute;
     z-index: 90;
     width: 400px;
     background-color: #000;
-    /*color: #000;*/
     padding: 8px;
     font-size: 12px;
     border: 7px solid #B01;
@@ -110,15 +111,18 @@ div#rating {
     border-radius: 10px;
 }
 
+.artist-tooltip table tr {
+    /* width: 30px;*/
+    background-color: inherit;
+}
+
 .artist-tooltip .content {
     position: relative;
-    background-color: #000;
     padding-bottom: 0;
 }
 
 .artist-tooltip .creator-profile-content {
     position: relative;
-    background-color: #000;
     padding-bottom: 0;
 }
 
@@ -139,20 +143,20 @@ div#rating {
     padding-left: 10px;
 }
 
-.artist-tooltip  h1 {
+.artist-tooltip h1 {
     line-height: 1.1em;
 }
 
-.artist-tooltip  h3 {
+.artist-tooltip h3 {
     font-size: 10px;
 
 }
 
-.artist-tooltip h1, .movie-tooltip  h1 {
+.artist-tooltip h1,
+.movie-tooltip h1 {
     font-family: Tahoma, Arial, Verdana;
     font-size: 16px;
     text-align: left;
-    color: #000;
     text-transform: none;
 }
 
@@ -163,10 +167,6 @@ div#rating {
 .artist-tooltip .info li {
     margin-bottom: 6px;
     line-height: 1.2em;
-}
-
-.artist-tooltip table th {
-   /* width: 30px;*/
 }
 
 .artist-tooltip table td {
@@ -180,6 +180,7 @@ div#rating {
 .artist-tooltip .info .photo_copyright {
     display: none;
 }
+
 .artist-tooltip .clear {
     clear: both;
 }
@@ -190,7 +191,6 @@ div#rating {
     z-index: 90;
     width: 400px;
     background-color: #000;
-   /* color: #000;*/
     padding: 8px;
     font-size: 12px;
     border: 7px solid #B01;
@@ -212,10 +212,12 @@ div#rating {
 }
 
 .movie-tooltip .film-posters {
-    position:relative;
+    position: relative;
 }
 
-.movie-tooltip #rating-good, .movie-tooltip #rating-average, .movie-tooltip #rating-trash {
+.movie-tooltip #rating-good,
+.movie-tooltip #rating-average,
+.movie-tooltip #rating-trash {
     color: #fff;
     color: white;
     font-size: 150%;
