@@ -77,11 +77,11 @@
                 artist_link_prefix = "https://www.csfd.cz";
             }
             var urls = [
-                artist_link_prefix + artist_link + "gelerie/?sort=sort_average",
+                artist_link_prefix + artist_link + "galerie/?sort=sort_average",
                 artist_link_prefix + artist_link + "oceneni/?sort=sort_average",
                 artist_link_prefix + artist_link + "autogram/?sort=sort_average",
                 artist_link_prefix + artist_link + "zajimavosti/?sort=sort_average",
-                artist_link_prefix + artist_link + "prehled/?sort=sort_average"
+                artist_link_prefix + artist_link + "?sort=sort_average"
             ];
 
             // check the cache
@@ -137,7 +137,6 @@
         // MOVIE TOOLTIP
         if (valMovieTooltip == "1" || valMovieTooltip == null) {
             $('a[href^="/film/"], [href^="https://www.csfd.cz/film/"]')
-                .not('a[href$="/prehled/"]')
                 .not('a[href*="/videa/"]')
                 .not('a[href*="/bazar/"]')
                 .not('a[href*="/oceneni/"]')
@@ -250,13 +249,12 @@
                 movie_link_prefix + movie_link + "diskuze/",
                 movie_link_prefix + movie_link + "galerie/",
                 movie_link_prefix + movie_link + "recenze/",
-                // movie_link_prefix + movie_link
+                movie_link_prefix + movie_link
             ];
 
             // check the cache
             var cache;
             var content;
-
             $.when(retrieveFromCache(CacheType.MOVIE, getCsfdIdFromUrl(urls[urls.length - 1]))).then(function (result) {
                 cache = result;
                 if (typeof cache != 'undefined' && cache != null && cache.tooltipContent != null) {

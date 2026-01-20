@@ -46,7 +46,6 @@
                     imdbRating = cache.movieInfo.imdbRating;
 
                     language = cache.movieInfo.language;
-                    console.log(imdbLinkPretty, imdbRating);
                     // display features
                     addFeatures();
                 } else {
@@ -57,7 +56,6 @@
                         'url': apiUrl,
                         'dataType': "json",
                         'success': function (data) {
-                            console.log(data.Ratings, data.Ratings && data.Ratings[0]);
                             title = data.Title;
                             if (data.Ratings && data.Ratings.length > 0 && data.Ratings[0].Value) {
                                 imdbRating = data.Ratings[0].Value;

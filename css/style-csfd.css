@@ -45,7 +45,7 @@ div#rating {
 }
 
 #share ul.ext li:not(:first-child) {
-    vertical-align: top;
+    ical-align: vert top;
     padding-left: 4px;
     padding-right: 4px;
     border-right: dotted #a2a2a2 1px;
@@ -118,12 +118,12 @@ div#rating {
 
 .artist-tooltip .content {
     position: relative;
-    padding-bottom: 0;
+    /* padding-bottom: 0;*/
 }
 
 .artist-tooltip .creator-profile-content {
     position: relative;
-    padding-bottom: 0;
+    padding: 8px;
 }
 
 .artist-tooltip .image {
@@ -138,9 +138,9 @@ div#rating {
 
 .artist-tooltip {
     float: left;
-    /*position: relative;*/
-    overflow: hidden;
-    padding-left: 10px;
+    /* position: relative;*/
+    /*overflow: hidden;*/
+    /*padding-left: 10px;*/
 }
 
 .artist-tooltip h1 {
@@ -175,6 +175,7 @@ div#rating {
     line-height: 1.2em;
     /*padding: 1px;*/
     border: 0;
+    vertical-align: middle;
 }
 
 .artist-tooltip .info .photo_copyright {
