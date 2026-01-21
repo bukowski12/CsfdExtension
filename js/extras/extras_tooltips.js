@@ -182,29 +182,73 @@
                             rating = "<div id=\"rating-trash\">" + rating + "</div>";
                         }
                         content += rating;
-                        content += "</td><td>";
-                        content += $(data).find('.film-info h1').get(0).outerHTML;
-                        content += $(data).find('.film-info .genres').get(0).outerHTML;
-                        content += $(data).find('.film-info .origin').get(0).outerHTML;
-                        var creators = $(data).find('.film-info .creators').text();
-                        creators = creators.substr(0, 500);
-                        creators = creators.replace('Režie:', '<br><strong>Režie:</strong>');
-                        creators = creators.replace('Předloha:', '<br><strong>Předloha:</strong>');
-                        creators = creators.replace('Kamera:', '<br><strong>Kamera:</strong>');
-                        creators = creators.replace('Hudba:', '<br><strong>Hudba:</strong>');
-                        creators = creators.replace('Hrají:', '<br><strong>Hrají:</strong>');
-                        creators = creators.replace('Scénář:', '<br><strong>Scénář:</strong>');
-                        creators += " ...";
-                        content += creators;
-                        content += "</td></tr></table>"
-                        if (content == null) {
-                            return false;
-                        }
-                        // use the content in a popup
-                        fillUpMoviePopup(content, e);
 
-                        // store to the cache
-                        storeToCache(CacheType.MOVIE, normalizeMovieObject(null, content, null, null, $.now()), getCsfdIdFromUrl(url));
+                        // Function to finalize and show popup
+                        var finalizePopup = function (imdbRatingHtml) {
+                            if (imdbRatingHtml) {
+                                content += imdbRatingHtml;
+                            }
+
+                            content += "</td><td>";
+                            content += $(data).find('.film-info h1').get(0).outerHTML;
+                            content += $(data).find('.film-info .genres').get(0).outerHTML;
+                            content += $(data).find('.film-info .origin').get(0).outerHTML;
+                            var creators = $(data).find('.film-info .creators').text();
+                            creators = creators.substr(0, 500);
+                            creators = creators.replace('Režie:', '<br><strong>Režie:</strong>');
+                            creators = creators.replace('Předloha:', '<br><strong>Předloha:</strong>');
+                            creators = creators.replace('Kamera:', '<br><strong>Kamera:</strong>');
+                            creators = creators.replace('Hudba:', '<br><strong>Hudba:</strong>');
+                            creators = creators.replace('Hrají:', '<br><strong>Hrají:</strong>');
+                            creators = creators.replace('Scénář:', '<br><strong>Scénář:</strong>');
+                            creators += " ...";
+                            content += creators;
+                            content += "</td></tr></table>"
+
+                            if (content == null) {
+                                return false;
+                            }
+                            // use the content in a popup
+                            fillUpMoviePopup(content, e);
+
+                            // store to the cache
+                            storeToCache(CacheType.MOVIE, normalizeMovieObject(null, content, null, null, $.now()), getCsfdIdFromUrl(url));
+                        };
+
+                        // Check for IMDB link
+                        var imdbLink = $(data).find('a.button-imdb').attr('href');
+                        if (imdbLink) {
+                            var imdbIdParts = imdbLink.split('/');
+                            var imdbId = "";
+                            if (imdbIdParts[imdbIdParts.length - 1] == "" || "combined" == imdbIdParts[imdbIdParts.length - 1]) {
+                                imdbId = imdbIdParts[imdbIdParts.length - 2];
+                            } else {
+                                imdbId = imdbIdParts[imdbIdParts.length - 1];
+                            }
+
+                            var apiKey = "ba1f4581";
+                            var apiUrl = "https://www.omdbapi.com/?i=" + imdbId + "&apikey=" + apiKey;
+
+                            $.ajax({
+                                'async': true,
+                                'url': apiUrl,
+                                'dataType': "json",
+                                'success': function (omdbData) {
+                                    var imdbVal = "N/A";
+                                    if (omdbData.Ratings && omdbData.Ratings.length > 0 && omdbData.Ratings[0].Value) {
+                                        imdbVal = omdbData.Ratings[0].Value;
+                                    } else if (omdbData.imdbRating) {
+                                        imdbVal = omdbData.imdbRating;
+                                    }
+                                    finalizePopup('<div id="imdb_rating">' + imdbVal + '</div>');
+                                },
+                                'error': function () {
+                                    finalizePopup("");
+                                }
+                            });
+                        } else {
+                            finalizePopup("");
+                        }
                     } else {
                         return false;
                     }

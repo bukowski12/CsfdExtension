@@ -16,7 +16,7 @@ Browser extension pro rozšíření funkcionality [CSFD.cz](https://www.csfd.cz)
 - **Odkaz na top stránky** - rychlý přechod na začátek stránky
 
 ### Chrome Web Store
-*Připravuje se*
+[CSFD Extensions](https://chromewebstore.google.com/detail/csfd-extensions/ookhejngpnlkejplknjeligcfnegimip)
 
 ## ⚙️ Nastavení
 
@@ -49,4 +49,3 @@ Pokud najdete chybu nebo máte nápad na vylepšení, prosím vytvořte [issue](
 - **CSFD profil autora:** [Tomizzi](https://www.csfd.cz/uzivatel/243918-tomizzi/)
 - **Web:** [smetanka.net](http://smetanka.net)
 - **GitHub:** [Bukowski12](https://github.com/bukowski12)
-- **Obchod Chrome:** [CSFD Extensions](https://chromewebstore.google.com/detail/csfd-extensions/ookhejngpnlkejplknjeligcfnegimip)

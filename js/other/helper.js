@@ -206,35 +206,53 @@ function retrieveFromCache(type, id) {
 
     var dfrd = $.Deferred();
 
-    switch (type) {
-        case CacheType.ARTIST:
-            chrome.storage.local.get('artists', function (result) {
-                if (typeof result.artists == 'undefined') {
-                    dfrd.resolve(null);
-                } else {
-                    if (result.artists[id] == null || isOlderThanMonth(result.artists[id].timestamp)) {
-                        dfrd.resolve(null);
-                    }
-                    dfrd.resolve(result.artists[id]);
-                }
-            });
-            break;
+    if (!chrome.runtime.id) {
+        dfrd.resolve(null);
+        return dfrd.promise();
+    }
 
-        case CacheType.MOVIE:
-            chrome.storage.local.get('movies', function (result) {
-                if (typeof result.movies == 'undefined') { // if the movies are not initializied yet (e.g. after the extension installation)
-                    dfrd.resolve(null);
-                } else {
-                    if (result.movies[id] == null || isOlderThanMonth(result.movies[id].timestamp)) {
+    try {
+        switch (type) {
+            case CacheType.ARTIST:
+                chrome.storage.local.get('artists', function (result) {
+                    if (chrome.runtime.lastError) {
                         dfrd.resolve(null);
+                        return;
                     }
-                    dfrd.resolve(result.movies[id]);
-                }
-            });
-            break;
+                    if (typeof result.artists == 'undefined') {
+                        dfrd.resolve(null);
+                    } else {
+                        if (result.artists[id] == null || isOlderThanMonth(result.artists[id].timestamp)) {
+                            dfrd.resolve(null);
+                        }
+                        dfrd.resolve(result.artists[id]);
+                    }
+                });
+                break;
 
-        default:
-            return null;
+            case CacheType.MOVIE:
+                chrome.storage.local.get('movies', function (result) {
+                    if (chrome.runtime.lastError) {
+                        dfrd.resolve(null);
+                        return;
+                    }
+                    if (typeof result.movies == 'undefined') { // if the movies are not initializied yet (e.g. after the extension installation)
+                        dfrd.resolve(null);
+                    } else {
+                        if (result.movies[id] == null || isOlderThanMonth(result.movies[id].timestamp)) {
+                            dfrd.resolve(null);
+                        }
+                        dfrd.resolve(result.movies[id]);
+                    }
+                });
+                break;
+
+            default:
+                return null;
+        }
+    } catch (e) {
+        console.warn("Storage access failed:", e);
+        dfrd.resolve(null);
     }
 
     return dfrd.promise();
