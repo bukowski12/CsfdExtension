@@ -34,19 +34,24 @@
                 success: function (data) {
                     // ignore if there are some redirect
                     if (typeof data.redirect == 'undefined') {
-                        content = $(data).find('.creator-profile');
-                        if (content == null) {
+                        var $profile = $(data).find('.creator-profile');
+                        if ($profile.length === 0) {
                             return false;
                         }
                         // remove photo copyright if exists
-                        content.find('.photo-copyright').remove();
+                        $profile.find('.creator-profile-footer').remove();
+                        $profile.find('.action-panel').remove();
+                        $profile.find('.fans-box-mobile').remove();
+
                         // add artist's filmography
                         var filmography = "";
-                        for (var i = 1; i < 4; i++) {
-                            filmography += $(data).find('.creator-filmography .box-content tr').get(i).outerHTML;
+                        var $rows = $(data).find('.creator-filmography .updated-box-content tr');
+                        for (var i = 1; i < Math.min($rows.length, 4); i++) {
+                            filmography += $rows.get(i).outerHTML;
                         }
-                        content = content.prop('outerHTML')
-                        content = content.replace(/<\/p>.+<\/div>/gs, '</p></div><br><table>' + filmography + '</table>');
+
+                        // Combine profile and filmography table safely
+                        content = $profile.prop('outerHTML') + '<table width="100%">' + filmography + '</table>';
 
 
                         // use the content in a popup

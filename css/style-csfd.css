@@ -244,3 +244,59 @@ div#rating {
 .movie-tooltip #imdb_rating:after {
     display: none;
 }
+
+/* Fix for tooltip layout overlap - Combined Strategy */
+.artist-tooltip .creator-profile {
+    display: block !important;
+    position: relative !important;
+    padding: 0 !important;
+    min-height: 132px !important;
+    /* Matches image height */
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.artist-tooltip .creator-profile-header,
+.artist-tooltip .creator-profile-content {
+    display: block !important;
+    padding-left: 110px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.artist-tooltip .creator-profile-details {
+    display: block !important;
+    padding-left: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.artist-tooltip .creator-profile-header {
+    padding-top: 0 !important;
+    padding-bottom: 2px !important;
+}
+
+.artist-tooltip .creator-profile figure {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100px !important;
+    margin: 0 !important;
+    float: none !important;
+}
+
+.artist-tooltip .creator-profile figure img {
+    width: 100px !important;
+    height: auto !important;
+    display: block !important;
+}
+
+/* Ensure the filmography table is full width and clear of floats */
+.artist-tooltip table {
+    width: 100% !important;
+    clear: both !important;
+    margin-top: 0 !important;
+}
