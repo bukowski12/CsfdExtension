@@ -91,7 +91,7 @@ div#rating {
     position: absolute;
     z-index: 90;
     width: 400px;
-    background-color: #000;
+    background-color: inherit;
     padding: 8px;
     font-size: 12px;
     border: 7px solid #B01;
